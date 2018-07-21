@@ -11,7 +11,7 @@ class SearchRepoContainer extends Component {
     let lang = query.lang || 'javascript'
     console.log('[Container]: pre action', lang)
     await store.dispatch(getTopRepos({ lang }))
-    console.log('[Container]: after action', state)
+    console.log('[Container]: after action')
   }
 
   componentDidMount () {
