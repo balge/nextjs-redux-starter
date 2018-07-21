@@ -6,11 +6,12 @@ export const GET_TOP_REPOS_SUCCESS = Symbol('GET_TOP_REPOS_SUCCESS')
 
 export function getTopRepos ({ lang }) {
   return dispatch => {
+    console.log('[Action]: sending')
     dispatch({
       type: GET_TOP_REPOS
     })
-
     return github.getTopRepos({ lang }).then(res => {
+      console.log('[Action]: GOT results')
       dispatch(onGetTopRepo(lang, res))
     })
   }

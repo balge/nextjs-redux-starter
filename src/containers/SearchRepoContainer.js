@@ -9,7 +9,9 @@ import SearchResults from 'components/SearchResults'
 class SearchRepoContainer extends Component {
   static async getInitialProps ({ store, query }) {
     let lang = query.lang || 'javascript'
+    console.log('[Container]: pre action', lang)
     await store.dispatch(getTopRepos({ lang }))
+    console.log('[Container]: after action', state)
   }
 
   componentDidMount () {
